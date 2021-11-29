@@ -299,9 +299,10 @@ included in the completions."
         (setq vc-git--program-version
               (if (and version-string
                        ;; Git for Windows appends ".windows.N" to the
-                       ;; numerical version reported by Git.
+                       ;; numerical version reported by Git. Git for
+                       ;; macOS appends " (Apple Git-N)".
                        (string-match
-                        "git version \\([0-9.]+\\)\\(\\.windows\\.[0-9]+\\)?$"
+                        "git version \\([0-9.]+\\)\\(\\.windows\\.[0-9]+\\)?\\( (Apple Git\\-[0-9]+)\\)?$"
                         version-string))
                   (match-string 1 version-string)
                 "0")))))
